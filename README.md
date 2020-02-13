@@ -1,4 +1,4 @@
-#AI Project #1 
+# AI Project #1 
 
 Forest Pearson
 
@@ -6,10 +6,10 @@ Forest Pearson
 
 CS 441/541: Artificial Intelligence
 
-##Overview
+## Overview
 
 A program that solves the 8-puzzle using the A* and best-first search algorithms while making use of multiple heuristics such as Manhattan, Linear-conflict and misplaced tiles.
 
-##Run Instructions
+## Run Instructions
 
 To compile type “g++ -std=c++11 -g -w *.cpp *.h -o puzzle” in the extracted folder.
