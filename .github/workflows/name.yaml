@@ -1,0 +1,51 @@
+name: 8Puzzle CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  Run-app:
+    runs-on: ubuntu-latest # 22.04 bionic
+    # env:
+    # API_KEY: ${{ secrets.API_KEY }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install g++
+        run: sudo apt-get update -q && sudo apt-get install -y g++-11
+
+      - name: Build Code
+        run: g++ -std=c++11 -g -w *.cpp -o puzzle
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cplusplus-artifact
+          path: puzzle
+
+      - run: python main.py
+      ##- run: echo $API_KEY
+      - run: |
+          touch test.py
+          echo "print('test3')" >> test.py
+      - uses: actions/upload-artifact@v3
+        with:
+          name: new-python
+          path: test.py
+
+  second-step:
+    runs-on: ubuntu-latest # 22.04 bionic
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: cplusplus-artifact
+          path: .
+
+      - run: ./puzzle
