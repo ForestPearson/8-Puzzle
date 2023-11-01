@@ -27,16 +27,6 @@ jobs:
           name: cplusplus-artifact
           path: puzzle
 
-      - run: python main.py
-      ##- run: echo $API_KEY
-      - run: |
-          touch test.py
-          echo "print('test3')" >> test.py
-      - uses: actions/upload-artifact@v3
-        with:
-          name: new-python
-          path: test.py
-
   second-step:
     runs-on: ubuntu-latest # 22.04 bionic
     needs: Run-app
