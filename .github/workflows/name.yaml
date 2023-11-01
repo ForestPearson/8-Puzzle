@@ -39,7 +39,7 @@ jobs:
 
   second-step:
     runs-on: ubuntu-latest # 22.04 bionic
-    needs: build
+    needs: Run-app
     steps:
       - uses: actions/checkout@v3
 
