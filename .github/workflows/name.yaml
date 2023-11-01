@@ -21,9 +21,6 @@ jobs:
       - name: Build Code
         run: g++ -std=c++11 -g -w *.cpp -o puzzle
 
-      - name: Set permissions
-        run: chmod +x puzzle
-
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -40,5 +37,8 @@ jobs:
         with:
           name: cplusplus-artifact
           path: .
+
+      - name: Set permissions
+        run: chmod +x puzzle
 
       - run: ./puzzle
