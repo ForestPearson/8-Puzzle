@@ -18,6 +18,9 @@ jobs:
       - name: Install g++
         run: sudo apt-get update -q && sudo apt-get install -y g++-11
 
+      - name: Install expect
+        run: sudo apt-get install -y expect
+
       - name: Build Code
         run: g++ -std=c++11 -g -w *.cpp -o puzzle
 
