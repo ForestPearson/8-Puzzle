@@ -8,7 +8,7 @@ CS 441/541: Artificial Intelligence
 
 ## Overview
 
-A program that solves the 8-puzzle using the A* and best-first search algorithms while making use of multiple heuristics such as Manhattan, Linear-conflict and misplaced tiles. Also incorporates GitHub actions for workflows.
+A program that solves the 8-puzzle using the A* and best-first search algorithms while making use of multiple heuristics such as Manhattan, Linear-conflict and misplaced tiles. Also incorporates GitHub actions for workflows to run it.
 
 ## Run Instructions
 
